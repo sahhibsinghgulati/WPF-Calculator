@@ -8,6 +8,7 @@
     Title="MainWindow"
     Width="350"
     Height="450"
+    Background="#FF313131"
     mc:Ignorable="d">
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -19,11 +20,22 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="82.5" />
-            <ColumnDefinition Width="82.5" />
-            <ColumnDefinition Width="82.5" />
-            <ColumnDefinition Width="82.5" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
         </Grid.ColumnDefinitions>
+
+        <TextBlock
+            x:Name="Output"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Margin="5"
+            VerticalAlignment="Center"
+            Background="DarkGray"
+            FontSize="60"
+            TextAlignment="Right" />
 
         <Button
             x:Name="SevenBtn"
@@ -104,6 +116,14 @@
             Grid.Column="1"
             Click="numBtn_Click"
             Content="0"
+            FontSize="20"
+            FontWeight="Bold" />
+        <Button
+            x:Name="DelBtn"
+            Grid.Row="1"
+            Grid.Column="3"
+            Click="numBtn_Click"
+            Content="x"
             FontSize="20"
             FontWeight="Bold" />
 
