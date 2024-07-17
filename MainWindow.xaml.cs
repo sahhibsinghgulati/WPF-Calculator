@@ -17,10 +17,13 @@ namespace WPF_Calculator
     public partial class MainWindow : Window
     { 
         string output="";
+        double temp = 0;
+        string operation = "";
 
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = this;
         }
 
         private void numBtn_Click(object sender, RoutedEventArgs e)
@@ -70,11 +73,96 @@ namespace WPF_Calculator
                     Output.Text = output;
                     break;
                 case "DelBtn":
-                    output = output.Substring(0,output.Length-1);
-                    Output.Text = output;
-                    break;
+                    if (output.Length > 0)
+                    {
+                        output = output.Substring(0, output.Length - 1);
+                        Output.Text = output;
+                        break;
+                    }
+                    else
+                        break;
+                    //case "AddBtn":
+                    //    output += "+";
+                    //    Output.Text = output;
+                    //    break;
+                    //case "SubtractBtn":
+
+                    //    break;
+                    //case "MultiplyBtn":
+                    //    output += "x";
+                    //    Output.Text = output;
+                    //    break;
+                    //case "DivideBtn":
+                    //    output += "/";
+                    //    Output.Text = output;
+                    //    break;
 
             }
+        }
+
+        private void SubtractBtn_Click(object sender, RoutedEventArgs e)
+        {   
+            if (output != "")
+            {
+                temp = double.Parse(output);
+            }
+            output = "";
+            operation = "-";
+
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(output != "")
+            {
+                temp = double.Parse(output);
+            }
+            output = "";
+            operation = "+";
+        }
+
+        private void EqualBtn_Click(object sender, RoutedEventArgs e)
+        {
+            switch(operation) {
+                case "+":
+                    output = (temp + double.Parse(output)).ToString();
+                    Output.Text = output;
+                    break;
+                case "-":
+                    output = (temp - double.Parse(output)).ToString();
+                    Output.Text = output;
+                    break;
+                case "x":
+                    output = (temp * double.Parse(output)).ToString();
+                    Output.Text = output;
+                    break;
+                case "/":
+                    output = (temp / double.Parse(output)).ToString();
+                    Output.Text = output;
+                    break;
+            }
+        }
+
+        private void MultiplyBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (output != "")
+            {
+                temp = double.Parse(output);
+            }
+            output = "";
+            operation = "x";
+
+        }
+
+        private void DivideBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (output != "")
+            {
+                temp = double.Parse(output);
+            }
+            output = "";
+            operation = "/";
+
         }
     }
 }
