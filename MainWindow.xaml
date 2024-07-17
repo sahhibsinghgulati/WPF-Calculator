@@ -22,16 +22,16 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="80" />
             <ColumnDefinition Width="80" />
-            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="54.507" />
+            <ColumnDefinition Width="25.493"/>
             <ColumnDefinition Width="80" />
         </Grid.ColumnDefinitions>
 
         <TextBlock
             x:Name="Output"
-            Grid.Row="0"
             Grid.Column="0"
-            Grid.ColumnSpan="4"
-            Margin="5"
+            Grid.ColumnSpan="5"
+            Margin="5,0,5,0"
             VerticalAlignment="Center"
             Background="DarkGray"
             FontSize="60"
@@ -60,7 +60,7 @@
             Click="numBtn_Click"
             Content="9"
             FontSize="20"
-            FontWeight="Bold" />
+            FontWeight="Bold" Grid.ColumnSpan="2" />
         <Button
             x:Name="FourBtn"
             Grid.Row="2"
@@ -84,7 +84,7 @@
             Click="numBtn_Click"
             Content="6"
             FontSize="20"
-            FontWeight="Bold" />
+            FontWeight="Bold" Grid.ColumnSpan="2" />
         <Button
             x:Name="OneBtn"
             Grid.Row="3"
@@ -108,12 +108,12 @@
             Click="numBtn_Click"
             Content="3"
             FontSize="20"
-            FontWeight="Bold" />
+            FontWeight="Bold" Grid.ColumnSpan="2" />
 
         <Button
             x:Name="ZeroBtn"
             Grid.Row="4"
-            Grid.Column="1"
+            Grid.Column="0"
             Click="numBtn_Click"
             Content="0"
             FontSize="20"
@@ -121,12 +121,51 @@
         <Button
             x:Name="DelBtn"
             Grid.Row="1"
-            Grid.Column="3"
+            Grid.Column="4"
+            Click="numBtn_Click"
+            Content="DEL"
+            FontSize="20"
+            FontWeight="Bold" />
+        <Button
+            x:Name="AddBtn"
+            Grid.Row="2"
+            Grid.Column="4"
+            Click="numBtn_Click"
+            Content="+"
+            FontSize="20"
+            FontWeight="Bold" />
+        <Button
+            x:Name="SubtractBtn"
+            Grid.Row="3"
+            Grid.Column="4"
+            Click="numBtn_Click"
+            Content="-"
+            FontSize="20"
+            FontWeight="Bold" />
+        <Button
+            x:Name="MultiplyBtn"
+            Grid.Row="4"
+            Grid.Column="1"
             Click="numBtn_Click"
             Content="x"
             FontSize="20"
             FontWeight="Bold" />
-
+        <Button
+            x:Name="DivideBtn"
+            Grid.Row="4"
+            Grid.Column="2"
+            Click="numBtn_Click"
+            Content="/"
+            FontSize="20"
+            FontWeight="Bold" Grid.ColumnSpan="2" />
+        <Button
+            x:Name="EqualBtn"
+            Grid.Row="4"
+            Grid.Column="4"
+            Click="numBtn_Click"
+            Content="="
+            FontSize="20"
+            FontWeight="Bold" />
 
     </Grid>
 </Window>
